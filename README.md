@@ -1,8 +1,18 @@
 # Hard Drive and USB Storage as Compute Substrate
 
-Out-of-core memory addressing (Host8 / SG-RAM) and CPU integer streaming that replaces GPU VRAM allocations and cloud computing clusters across the Jesse Daniel Brown ecosystem.
+Out-of-core memory addressing (Host8 / SG-RAM), native HEB-C/HTTP-0 D3Q27 CPU computation, and classical integer/ternary benchmarks across the Jesse Daniel Brown research repositories. **GPU-independent execution is established for the specific implemented integer workloads; equivalence to general GPU workloads is an open benchmarking question.**
 
 ---
+
+## Latest announcement and connected results — November 4, 2026
+
+**[Read the public project announcement with source links, measured results and open controls](ANNOUNCEMENT-HTTP0-HOST8-WILLOW-20261104.md).**
+
+**[Reverse-history repository map: QNN → Google circuits → HTTP-0 → Host8 → YM4 → finite Yang–Mills → Clay → Willow](ECOSYSTEM-RESEARCH-MAP-20261104.md)**. Includes 17 verified source repositories, their roles, results and open gates.
+
+- **[HTTP-0 actual physical engine](https://github.com/JesseBrown1980/qoled-internet-HEB-C-revisted-HTTP---free-0-hbi-hbp-sha-sh-hash/pull/3):** Rust 1.81 now advances **96³ × 27 = 23,887,872 real D3Q27 trit channels**, with exact conservation and three-step reversal checks. [Measured 24³/48³/96³ timings and state hashes](https://github.com/JesseBrown1980/qoled-internet-HEB-C-revisted-HTTP---free-0-hbi-hbp-sha-sh-hash/blob/main/engine96/MEASURED-20261104.hbp).
+- **[HTTP-0 original public results/announcement record (October 24)](https://github.com/JesseBrown1980/qoled-internet-HEB-C-revisted-HTTP---free-0-hbi-hbp-sha-sh-hash/blob/main/HEBC_23B_VIRTUAL_PORTAL_REPORT.md):** 23 billion **virtual identifiers** with 1,990,656 actual probes. The [new 3¹⁶ certificate catalog](https://github.com/JesseBrown1980/qoled-internet-HEB-C-revisted-HTTP---free-0-hbi-hbp-sha-sh-hash/blob/main/docs/HTTP0-YANG-MILLS-3POWER16.md) has **43,046,721 virtual slots** and **732 populated observations/receipts**; these addresses are distinct from physical computation.
+- **[Asolaria-versus-Willow-class results](https://github.com/JesseBrown1980/Asolaria-vs-Williow-chip-Results/blob/main/RESULTS.md):** [the ten-run source receipt](https://github.com/JesseBrown1980/Asolaria-vs-Williow-chip-Results/blob/main/receipts/WILLOW-10RUNS-MAXTRITS-20261022.hbp) records **80,000 classical 108-lane circuits, a 290 µs mean, 12.8 million exact finite-field transform checks and 70,000 test decoding rounds**. The separate [five-tier mapped 100 GB store and Willow-class benchmark](https://github.com/JesseBrown1980/Asolaria-VS-GOOGLE-Willow-chip/blob/main/WILLOW-VS-ASOLARIA-REPORT.md) includes measured memory-access and circuit times. These are **classical model-specific results**, not a same-task speed measurement against Google's physical Willow processor.
 
 ## 1. Architectural Overview: Secondary Storage as Addressed Memory
 
@@ -17,7 +27,7 @@ This repository documents the **Host8 / SG-RAM / Out-of-Core Architecture** esta
 
 ## 2. Core Repository Implementations
 
-The architecture is implemented and verified across four primary repositories:
+The architecture is documented across four compute/storage repositories, with a linked fifth repository for Willow-class benchmark evidence:
 
 ### A. [`Clasy-repo-x-3-`](https://github.com/JesseBrown1980/Clasy-repo-x-3-) *(Rust 1.81 Native Streaming Engine)*
 - **Key Modules**:
@@ -44,7 +54,7 @@ The architecture is implemented and verified across four primary repositories:
 - **Physical Instantiation**:
   - Grounded across the **300 GB Host8 store** (`D:\ASOLARIA-HOST8-ROOMS-300G`, 37.5 billion rooms) and the **100 GB Falcon phone dock** (`D:\ASOLARIA-PHONE-FALCON-DOCK`), executing with integer-only precision and zero floating-point roundoff.
 
-### D. [`qoled-internet-HEB-C-revisted-HTTP---free-0-hbi-hbp-sha-sh-hash`](https://github.com/JesseBrown1980/qoled-internet-HEB-C-revisted-HTTP---free-0-hbi-hbp-sha-sh-hash) *(Virtual Address Space & $0 Portal)*
+### D. [`qoled-internet-HEB-C-revisted-HTTP---free-0-hbi-hbp-sha-sh-hash`](https://github.com/JesseBrown1980/qoled-internet-HEB-C-revisted-HTTP---free-0-hbi-hbp-sha-sh-hash) *(HTTP-0 source catalog, native CPU engine and local portal)*
 - **Key Modules**:
   - `CROSS_VALIDATION_HOST8_HEBC_REPORT.md`: Physical 300 GB block execution and cross-executor verification.
   - `CANONICAL_RUST_HEBC_REPORT.md` & `REPRODUCE_NATIVE_RUST_181.md`: Headless, browser-independent execution with zero external cloud dependencies.
@@ -52,6 +62,12 @@ The architecture is implemented and verified across four primary repositories:
   - Maps 23 billion logical process instances in $O(1)$ space using coprime hashing:
     $$\text{virtual\_id} = (\text{ordinal} \times 1,000,003) \pmod{23,000,000,000}$$
   - Unoccupied instances require **0 in-memory allocations**, allowing a machine with standard RAM and no GPU to achieve 28.2 million address probes/second.
+- **New physical update engine:** [`src/scale96.rs`](https://github.com/JesseBrown1980/qoled-internet-HEB-C-revisted-HTTP---free-0-hbi-hbp-sha-sh-hash/blob/main/src/scale96.rs) computes the actual 24³, 48³ and **96³** D3Q27 states. At 96³, two 1-byte-per-trit state buffers total **47,775,744 bytes**. The [3-step CI receipt](https://github.com/JesseBrown1980/qoled-internet-HEB-C-revisted-HTTP---free-0-hbi-hbp-sha-sh-hash/blob/main/engine96/MEASURED-20261104.hbp) records **1.025157327 seconds**, conserved integer invariants, full reversal and 24³ old-engine byte equality. The original engine at 24³ was faster in this controlled pair.
+- **Evidence service:** [Clay/Taylor 729-register bridge](https://github.com/JesseBrown1980/qoled-internet-HEB-C-revisted-HTTP---free-0-hbi-hbp-sha-sh-hash/blob/main/docs/HTTP0-CLAY-3POWER16-BRIDGE.md) and [Yang–Mills three-receipt bridge](https://github.com/JesseBrown1980/qoled-internet-HEB-C-revisted-HTTP---free-0-hbi-hbp-sha-sh-hash/blob/main/docs/HTTP0-YANG-MILLS-3POWER16.md) share a sparse 3¹⁶ catalog with **732 occupied addresses**. Read-only source-integrity checks verify evidence without rerunning the Yang–Mills Hamiltonian.
+
+### E. [`Asolaria-vs-Williow-chip-Results`](https://github.com/JesseBrown1980/Asolaria-vs-Williow-chip-Results) *(Classical integer benchmark and sealed receipts)*
+- **Result sources:** [`RESULTS.md`](https://github.com/JesseBrown1980/Asolaria-vs-Williow-chip-Results/blob/main/RESULTS.md), [ten-run HBP](https://github.com/JesseBrown1980/Asolaria-vs-Williow-chip-Results/blob/main/receipts/WILLOW-10RUNS-MAXTRITS-20261022.hbp), and the [original five-tier Willow-class study](https://github.com/JesseBrown1980/Asolaria-VS-GOOGLE-Willow-chip/blob/main/WILLOW-VS-ASOLARIA-REPORT.md).
+- **Registered classical workload:** 80,000 depth-40 transformations across 108 NTT lanes with **290 µs mean**, **12,800,000 exact Parseval/round-trip checks** and 70,000 synthetic syndrome test rounds. These timings characterize integer/ternary test code on a CPU; the reports do not establish same-task quantum-computer performance.
 
 ---
 
@@ -114,6 +130,12 @@ The companion HTTP-0 portal architecture introduced in `qoled-internet-HEB-C-rev
    - **HBI (Hash-Based Index)**: Byte-exact random access index mapping sector, tick, byte offset, and record length.
    - **Trust Anchor (`.anchor`)**: Cryptographic signature binding total ticks, total rooms, and root SHA-256 digests for bit-for-bit verifiable replay.
 
+### Native HTTP-0 96³ compute path and comparison boundary
+
+The 2026-11-04 [engine release and prediction-first benchmark](https://github.com/JesseBrown1980/qoled-internet-HEB-C-revisted-HTTP---free-0-hbi-hbp-sha-sh-hash/pull/3) adds **actual CPU state updates** on 23,887,872 trit channels, rather than expanding a virtual address catalog. Run `cargo +1.81.0 run --release --locked --offline -- --bench-engine 96 3` in the HTTP-0 repository. The [source-backed timing receipt](https://github.com/JesseBrown1980/qoled-internet-HEB-C-revisted-HTTP---free-0-hbi-hbp-sha-sh-hash/blob/main/engine96/MEASURED-20261104.hbp) documents input-gate pinning, exact state reversal and recorded CPU times. The [Taylor–Green 96³ cutoff](https://github.com/JesseBrown1980/Taylor_green_regularity-resolved-and-solved/tree/main/results/2026-10-30-cutoff) is a different 192-step externally driven experiment with **C1 PASS / A1 FAIL**, retained on record.
+
+**Storage distinction:** packed 8-byte Host8 rooms are one representation; the new mutable 96³ D3Q27 engine uses **47,775,744 bytes for two buffers**. The 23-billion and 3¹⁶ HTTP-0 identifiers are sparse **logical addresses**, not physical compute threads, GPU lanes or deployed network peers. On the recorded 24³ control the specialized old engine outperformed the generalized one, so there is no same-workload evidence of a general speed advantage over GPUs.
+
 ---
 
 ## 6. Repository Map & Cross-References
@@ -127,3 +149,7 @@ The companion HTTP-0 portal architecture introduced in `qoled-internet-HEB-C-rev
 | **300GB Substrate Proof** | `CORRECTION-TO-ASOLARIA...` | [`PROOF.md`](https://github.com/JesseBrown1980/CORRECTION-TO-ASOLARIA-AND-FAULT-TO-OPEN-AI-NAVIER-STOKES-SOLUTIONS-SOLVED/blob/main/PROOF.md) |
 | **HTTP-0 Loopback Engine** | `qoled-internet-HEB-C-revisted...` | [`src/main.rs`](https://github.com/JesseBrown1980/qoled-internet-HEB-C-revisted-HTTP---free-0-hbi-hbp-sha-sh-hash/blob/main/src/main.rs) |
 | **Cross-Validation Receipts** | `qoled-internet-HEB-C-revisted...` | [`CROSS_VALIDATION_HOST8_HEBC_REPORT.md`](https://github.com/JesseBrown1980/qoled-internet-HEB-C-revisted-HTTP---free-0-hbi-hbp-sha-sh-hash/blob/main/CROSS_VALIDATION_HOST8_HEBC_REPORT.md) |
+| **Verified physical 96³ CPU engine** | `qoled-internet-HEB-C-revisted...` | [`src/scale96.rs`](https://github.com/JesseBrown1980/qoled-internet-HEB-C-revisted-HTTP---free-0-hbi-hbp-sha-sh-hash/blob/main/src/scale96.rs) · [timings/receipt](https://github.com/JesseBrown1980/qoled-internet-HEB-C-revisted-HTTP---free-0-hbi-hbp-sha-sh-hash/blob/main/engine96/MEASURED-20261104.hbp) |
+| **Project announcement / source ledger** | `Hard-drive-and-USB-as-GPU` | [November 4 announcement](ANNOUNCEMENT-HTTP0-HOST8-WILLOW-20261104.md) · [October 24 HTTP-0 report](https://github.com/JesseBrown1980/qoled-internet-HEB-C-revisted-HTTP---free-0-hbi-hbp-sha-sh-hash/blob/main/HEBC_23B_VIRTUAL_PORTAL_REPORT.md) |
+| **Willow-class integer benchmark (10 runs)** | `Asolaria-vs-Williow-chip-Results` | [`RESULTS.md`](https://github.com/JesseBrown1980/Asolaria-vs-Williow-chip-Results/blob/main/RESULTS.md) · [primary HBP](https://github.com/JesseBrown1980/Asolaria-vs-Williow-chip-Results/blob/main/receipts/WILLOW-10RUNS-MAXTRITS-20261022.hbp) |
+| **Willow-class 5-tier memory comparison** | `Asolaria-VS-GOOGLE-Willow-chip` | [`WILLOW-VS-ASOLARIA-REPORT.md`](https://github.com/JesseBrown1980/Asolaria-VS-GOOGLE-Willow-chip/blob/main/WILLOW-VS-ASOLARIA-REPORT.md) |
