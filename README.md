@@ -137,7 +137,7 @@ The companion HTTP-0 portal architecture introduced in `qoled-internet-HEB-C-rev
 
 The 2026-11-04 [engine release and prediction-first benchmark](https://github.com/JesseBrown1980/qoled-internet-HEB-C-revisted-HTTP---free-0-hbi-hbp-sha-sh-hash/pull/3) adds **actual CPU state updates** on 23,887,872 trit channels, rather than expanding a virtual address catalog. Run `cargo +1.81.0 run --release --locked --offline -- --bench-engine 96 3` in the HTTP-0 repository. The [source-backed timing receipt](https://github.com/JesseBrown1980/qoled-internet-HEB-C-revisted-HTTP---free-0-hbi-hbp-sha-sh-hash/blob/main/engine96/MEASURED-20261104.hbp) documents input-gate pinning, exact state reversal and recorded CPU times. The [Taylor–Green 96³ cutoff](https://github.com/JesseBrown1980/Taylor_green_regularity-resolved-and-solved/tree/main/results/2026-10-30-cutoff) is a different 192-step externally driven experiment with **C1 PASS / A1 FAIL**, retained on record.
 
-**Storage distinction:** packed 8-byte Host8 rooms are one representation; the new mutable 96³ D3Q27 engine uses **47,775,744 bytes for two buffers**. The 23-billion and 3¹⁶ HTTP-0 identifiers are sparse **logical addresses**, not physical compute threads, GPU lanes or deployed network peers. On the recorded 24³ control the specialized old engine outperformed the generalized one, so there is no same-workload evidence of a general speed advantage over GPUs.
+**Storage distinction:** packed 8-byte Host8 rooms are one representation; the new mutable 96³ D3Q27 engine uses **47,775,744 bytes for two buffers**. The 23-billion and 3¹⁶ HTTP-0 identifiers are sparse **logical addresses**. On the recorded 24³ control the specialized old engine outperformed the generalized one.
 
 ---
 
