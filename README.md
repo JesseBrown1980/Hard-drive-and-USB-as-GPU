@@ -1,6 +1,6 @@
 # Hard Drive and USB Storage as Compute Substrate
 
-Out-of-core memory addressing (Host8 / SG-RAM), native HEB-C/HTTP-0 D3Q27 CPU computation, and classical integer/ternary benchmarks across the Jesse Daniel Brown research repositories. **GPU-independent execution is established for the specific implemented integer workloads; equivalence to general GPU workloads is an open benchmarking question.**
+Out-of-core memory addressing (Host8 / SG-RAM), native HEB-C/HTTP-0 D3Q27 CPU computation, and classical integer/ternary benchmarks across the Jesse Daniel Brown research repositories.
 
 ---
 
